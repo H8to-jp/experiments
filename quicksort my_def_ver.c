@@ -19,7 +19,6 @@ void swap(int* x, int* y) {
 //クイックソートを実行する関数
 void quick_sort(int A[], int l, int r) {	//Array, left, right
 	int cl = l, cr = r, p = A[(l + r) / 2];	// cursor left, cursor right, pivot
-	printf("%d %d %d\n", l, r, p);
 	if (r - l > 0) {
 		while (1) {
 			while (A[cl] < p && cl <= r) {
@@ -34,7 +33,7 @@ void quick_sort(int A[], int l, int r) {	//Array, left, right
 				cr -= 1;
 			}
 			else {
-				print_array_int(A, 10);
+				print_array_int(A, 10);	//過程の表示
 				break;
 			}
 		}
@@ -48,8 +47,11 @@ void quick_sort(int A[], int l, int r) {	//Array, left, right
 
 int main(void) {
 	int X[10] = { 5, 0, 9, 7, 1, 6, 3, 8, 4, 2 };
+	printf("<ソート前>\n");
 	print_array_int(X, 10);
+	printf("<ソート経過>\n");
 	quick_sort(X, 0, 9);
+	printf("<ソート後>\n");
 	print_array_int(X, 10);
 
 	return 0;
